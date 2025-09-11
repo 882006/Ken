@@ -831,7 +831,7 @@
     
     <!-- Overlay kích hoạt với hiệu ứng màu custom -->
     <div class="activation-overlay" id="activationOverlay">
-        <div class="activation-message">Welcome to My Profile</div>
+        <div class="activation-message">Hi there, welcome</div>
         <div class="activation-hint">Click anywhere to enter</div>
     </div>
     
@@ -1313,4 +1313,21 @@
             // Hiệu ứng khi hover vào view counter
             const viewCounter = document.getElementById('globalViewCounter');
             viewCounter.addEventListener('mouseover', function() {
-                this.style.background = 'rg
+                this.style.background = 'rgba(220, 80, 140, 0.5)';
+            });
+            // Thêm hiệu ứng khi di chuột ra
+            viewCounter.addEventListener('mouseout', function() {
+                this.style.background = 'rgba(89, 30, 70, 0.7)';
+            });
+
+            // Hiển thị footer
+            setTimeout(() => {
+                const mainFooter = document.getElementById('mainFooter');
+                if (mainFooter) {
+                    mainFooter.classList.add('show-footer');
+                }
+            }, 1000); // Xuất hiện sau 1 giây
+        });
+    </script>
+</body>
+</html>
