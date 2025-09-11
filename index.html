@@ -291,7 +291,8 @@
             font-weight: bold;
             color: #ff9ecb;
         }
-
+        
+        /* Chỉnh sửa bio */
         .bio {
             font-size: 0.85rem;
             color: #e0c0d0;
@@ -300,6 +301,7 @@
             text-align: center;
             font-style: italic;
             padding: 0 8px;
+            font-weight: bold; /* Chữ in đậm */
         }
 
         .profile-right {
@@ -643,24 +645,6 @@
             }
         }
 
-        /* Typing animation */
-        .bio {
-            overflow: hidden;
-            border-right: 2px solid rgba(255, 150, 200, 0.75);
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-           50% { border-color: rgba(255, 150, 200, 0.75) }
-        }
-
         /* Border glow effect */
         @keyframes border-glow {
             0% {
@@ -841,7 +825,7 @@
 
     <!-- Audio element for background music -->
     <audio id="bgMusicAudio" loop style="display: none;">
-        <source src="mp3/yung kai - blue (Lyrics).mp3" type="audio/mp3">
+        <source src="Musicback.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
@@ -1320,14 +1304,18 @@
                 this.style.background = 'rgba(89, 30, 70, 0.7)';
             });
 
-            // Hiển thị footer
-            setTimeout(() => {
+            // Hiển thị footer khi cuộn chuột
+            const handleFooterScroll = () => {
                 const mainFooter = document.getElementById('mainFooter');
-                if (mainFooter) {
+                // Hiển thị khi người dùng cuộn xuống một chút (ví dụ: 50px)
+                if (window.scrollY > 50) {
                     mainFooter.classList.add('show-footer');
+                    // Gỡ bỏ event listener sau khi đã hiển thị để tối ưu hiệu năng
+                    window.removeEventListener('scroll', handleFooterScroll);
                 }
-            }, 1000); // Xuất hiện sau 1 giây
+            };
+            window.addEventListener('scroll', handleFooterScroll);
         });
     </script>
 </body>
-</html>
+</html>```
