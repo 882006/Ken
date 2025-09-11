@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyễn Nem's Profile</title>
+    <title>Kurumi Lover's Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -38,7 +38,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f0c29, #2a0845);
+            background: linear-gradient(135deg, #1a1038, #3a1a5c);
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
@@ -66,7 +66,7 @@
             top: 15px;
             left: 15px;
             z-index: 100;
-            background: rgba(30, 30, 46, 0.7);
+            background: rgba(89, 30, 70, 0.7);
             padding: 8px 15px;
             border-radius: 20px;
             display: flex;
@@ -74,18 +74,19 @@
             gap: 8px;
             font-size: 0.9rem;
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(138, 92, 246, 0.3);
-            box-shadow: 0 0 10px rgba(138, 92, 246, 0.3);
+            border: 1px solid rgba(220, 80, 140, 0.5);
+            box-shadow: 0 0 10px rgba(220, 80, 140, 0.5);
             transition: all 0.3s ease;
         }
 
         .global-view-counter:hover {
-            background: rgba(138, 92, 246, 0.5);
+            background: rgba(220, 80, 140, 0.5);
         }
 
         .view-count {
             font-weight: bold;
             transition: all 0.3s;
+            color: #ff9ecb;
         }
 
         .container {
@@ -95,12 +96,11 @@
             padding: 15px;
             z-index: 10;
             position: relative;
-            background: rgba(30, 26, 46, 0.25);
+            background: rgba(60, 25, 60, 0.3);
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 15px rgba(138, 92, 246, 0.3);
+            box-shadow: 0 0 15px rgba(220, 80, 140, 0.4);
             overflow: hidden;
-            /* Tăng margin-bottom để tạo khoảng cách */
             margin-bottom: 80px;
             padding-bottom: 0px;
             transition: all 0.5s ease-out;
@@ -134,15 +134,15 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 1px solid rgba(242, 198, 222, 0.8);
-            box-shadow: 0 0 15px rgba(242, 198, 222, 0.6);
+            border: 1px solid rgba(255, 150, 200, 0.8);
+            box-shadow: 0 0 15px rgba(255, 150, 200, 0.6);
             position: relative;
             transition: all 0.3s ease;
         }
 
         .profile-pic:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(242, 198, 222, 0.8);
+            box-shadow: 0 0 25px rgba(255, 150, 200, 0.8);
         }
 
         .status-badge {
@@ -152,41 +152,41 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(255, 214, 10, 0.3);
+            background: rgba(220, 80, 140, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 10;
             transition: all 0.3s ease;
-            box-shadow: 0 0 10px rgba(255, 214, 10, 0.5);
+            box-shadow: 0 0 10px rgba(220, 80, 140, 0.6);
         }
 
         .status-badge:hover {
             transform: scale(1.2);
-            background: rgba(255, 214, 10, 0.5);
+            background: rgba(220, 80, 140, 0.7);
         }
 
         .status-badge i {
-            color: #ffd60a;
+            color: #ff9ecb;
             font-size: 1.2rem;
         }
 
         .name-container {
             width: 100%;
-            background: rgba(138, 92, 246, 0.1);
+            background: rgba(220, 80, 140, 0.2);
             border-radius: 12px;
             padding: 8px 10px;
             margin-bottom: 8px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(242, 198, 222, 0.3);
+            border: 1px solid rgba(255, 150, 200, 0.3);
             position: relative;
             overflow: hidden;
         }
 
         .name-container:hover {
-            background: rgba(138, 92, 246, 0.2);
-            box-shadow: 0 0 10px rgba(138, 92, 246, 0.3);
+            background: rgba(220, 80, 140, 0.3);
+            box-shadow: 0 0 10px rgba(220, 80, 140, 0.4);
         }
 
         .name-container.active, .copyright.active, .contact-box.active {
@@ -196,11 +196,11 @@
         @keyframes elementPulse {
             0%, 100% { 
                 transform: scale(1);
-                box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+                box-shadow: 0 0 5px rgba(255, 150, 200, 0.5);
             }
             50% { 
                 transform: scale(1.03);
-                box-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff;
+                box-shadow: 0 0 20px #ff9ecb, 0 0 30px #ff9ecb;
             }
         }
 
@@ -231,26 +231,26 @@
         @keyframes charBlink {
             0%, 100% { 
                 transform: translateY(0);
-                text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+                text-shadow: 0 0 5px rgba(255, 150, 200, 0.5);
             }
             50% { 
                 transform: translateY(-5px);
-                text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff;
+                text-shadow: 0 0 20px #ff9ecb, 0 0 30px #ff9ecb;
                 font-weight: 800;
                 color: white;
             }
         }
 
-        .username span:nth-child(1) { color: #99DEFF; }
-        .username span:nth-child(2) { color: #94E2FC; }
-        .username span:nth-child(3) { color: #8EE5F9; }
-        .username span:nth-child(4) { color: #89E9F5; }
-        .username span:nth-child(5) { color: #83EDF2; }
-        .username span:nth-child(6) { color: #7EF0EF; }
-        .username span:nth-child(7) { color: #ffffff; }
-        .username span:nth-child(8) { color: #73F8E8; }
-        .username span:nth-child(9) { color: #6DFBE5; }
-        .username span:nth-child(10) { color: #68FFE2; }
+        .username span:nth-child(1) { color: #ff9ecb; }
+        .username span:nth-child(2) { color: #ffa6cf; }
+        .username span:nth-child(3) { color: #ffaed3; }
+        .username span:nth-child(4) { color: #ffb6d7; }
+        .username span:nth-child(5) { color: #ffbedb; }
+        .username span:nth-child(6) { color: #ffc6df; }
+        .username span:nth-child(7) { color: #ffcee3; }
+        .username span:nth-child(8) { color: #ffd6e7; }
+        .username span:nth-child(9) { color: #ffdeeb; }
+        .username span:nth-child(10) { color: #ffe6ef; }
 
         .contact-info {
             width: 100%;
@@ -262,7 +262,7 @@
 
         .contact-box {
             width: 100%;
-            background: rgba(40, 40, 62, 0.2);
+            background: rgba(80, 30, 70, 0.3);
             border-radius: 12px;
             padding: 12px;
             text-align: center;
@@ -275,7 +275,7 @@
         }
 
         .contact-box:hover {
-            background: rgba(40, 40, 62, 0.3);
+            background: rgba(100, 40, 80, 0.4);
             transform: translateY(-3px);
         }
 
@@ -283,17 +283,18 @@
             font-size: 1rem;
             margin-bottom: 5px;
             font-weight: bold;
+            color: #ff9ecb;
         }
 
         .contact-box .phone-number, .contact-box .email {
             font-size: 1.1rem;
             font-weight: bold;
-            color: #99DEFF;
+            color: #ff9ecb;
         }
 
         .bio {
             font-size: 0.85rem;
-            color: #b0b0c0;
+            color: #e0c0d0;
             line-height: 1.8;
             margin-top: 12px;
             text-align: center;
@@ -309,11 +310,11 @@
         }
 
         .card {
-            background: rgba(35, 31, 51, 0.3);
+            background: rgba(70, 30, 70, 0.3);
             border-radius: 15px;
             padding: 15px;
             margin-bottom: 20px;
-            border: 1px solid rgba(138, 92, 246, 0.2);
+            border: 1px solid rgba(220, 80, 140, 0.3);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
@@ -325,7 +326,7 @@
 
         .card-title {
             font-size: 1.3rem;
-            color: #8a5cf6;
+            color: #ff9ecb;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -412,6 +413,7 @@
             font-size: 0.8rem;
             text-align: center;
             font-weight: bold;
+            color: #ffb6d7;
         }
 
         .playlists-container {
@@ -422,13 +424,13 @@
         }
 
         .playlist-card {
-            background: rgba(40, 40, 62, 0.3);
+            background: rgba(80, 30, 70, 0.3);
             border-radius: 12px;
             padding: 0;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(138, 92, 246, 0.2);
+            border: 1px solid rgba(220, 80, 140, 0.3);
             height: 160px;
             cursor: pointer;
         }
@@ -448,12 +450,12 @@
             position: absolute;
             bottom: 10px;
             right: 10px;
-            background: rgba(30, 30, 46, 0.7);
+            background: rgba(89, 30, 70, 0.7);
             padding: 5px 10px;
             border-radius: 15px;
             font-size: 0.7rem;
-            color: #8a5cf6;
-            border: 1px solid rgba(138, 92, 246, 0.3);
+            color: #ff9ecb;
+            border: 1px solid rgba(220, 80, 140, 0.5);
             display: none;
         }
 
@@ -480,13 +482,13 @@
 
         .copyright {
             display: inline-block;
-            background: rgba(30, 30, 46, 0.7);
+            background: rgba(89, 30, 70, 0.7);
             padding: 10px 20px;
             border-radius: 20px;
-            color: #b0b0c0;
+            color: #e0c0d0;
             font-size: 0.9rem;
-            border: 1px solid rgba(138, 92, 246, 0.3);
-            box-shadow: 0 0 10px rgba(138, 92, 246, 0.3);
+            border: 1px solid rgba(220, 80, 140, 0.5);
+            box-shadow: 0 0 10px rgba(220, 80, 140, 0.5);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -494,9 +496,9 @@
         }
 
         .copyright:hover {
-            background: rgba(138, 92, 246, 0.5);
+            background: rgba(220, 80, 140, 0.5);
             color: white;
-            box-shadow: 0 0 15px rgba(138, 92, 246, 0.5);
+            box-shadow: 0 0 15px rgba(220, 80, 140, 0.6);
         }
 
         /* Music control */
@@ -507,9 +509,9 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: rgba(30, 30, 46, 0.7);
-            border: 1px solid rgba(138, 92, 246, 0.3);
-            box-shadow: 0 0 15px rgba(138, 92, 246, 0.3);
+            background: rgba(89, 30, 70, 0.7);
+            border: 1px solid rgba(220, 80, 140, 0.5);
+            box-shadow: 0 0 15px rgba(220, 80, 140, 0.5);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -521,7 +523,7 @@
         }
 
         .music-control:hover {
-            background: rgba(138, 92, 246, 0.5);
+            background: rgba(220, 80, 140, 0.5);
             transform: scale(1.1);
         }
 
@@ -530,9 +532,9 @@
         }
 
         @keyframes pulseMusic {
-            0% { box-shadow: 0 0 0 0 rgba(138, 92, 246, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(138, 92, 246, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(138, 92, 246, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(220, 80, 140, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(220, 80, 140, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 80, 140, 0); }
         }
 
         /* Overlay kích hoạt */
@@ -559,8 +561,8 @@
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 30px;
-            text-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
-            background: linear-gradient(45deg, #82F0FF, #7DEEF7, #78ECEE, #73EAE6, #69E6D6, #64E4CD, #5FE2C5, #5FE1CC, #77E1CF, #7FE1D3, #87E0D6, #8FE0D9, #9EE0E0, #A6DFE3, #B6DFEA, #BEDEEE, #C6DEF1, #B2D5F1, #9FCCF1, #8BC4F2, #77BBF2, #64B2F2, #50A9F2);
+            text-shadow: 0 0 15px rgba(220, 80, 140, 0.8);
+            background: linear-gradient(45deg, #ff9ecb, #ffa6cf, #ffaed3, #ffb6d7, #ffbedb, #ffc6df, #ffcee3, #ffd6e7, #ffdeeb, #ffe6ef);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -571,10 +573,10 @@
 
         @keyframes glow {
             from {
-                text-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 123, 255, 0.6);
+                text-shadow: 0 0 10px rgba(220, 80, 140, 0.8), 0 0 20px rgba(220, 80, 140, 0.6);
             }
             to {
-                text-shadow: 0 0 20px rgba(0, 123, 255, 1), 0 0 30px rgba(0, 123, 255, 0.8), 0 0 40px rgba(0, 123, 255, 0.6);
+                text-shadow: 0 0 20px rgba(220, 80, 140, 1), 0 0 30px rgba(220, 80, 140, 0.8), 0 0 40px rgba(220, 80, 140, 0.6);
             }
         }
 
@@ -585,8 +587,112 @@
             background: rgba(0, 0, 0, 0.4);
             padding: 15px 25px;
             border-radius: 15px;
-            border: 2px solid rgba(0, 123, 255, 0.5);
-            box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+            border: 2px solid rgba(220, 80, 140, 0.5);
+            box-shadow: 0 0 20px rgba(220, 80, 140, 0.3);
+        }
+
+        /* Floating particles */
+        .floating-particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(220, 80, 140, 0.15);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Ripple effect */
+        .social-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .social-link:hover .social-icon::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 1;
+            }
+            20% {
+                transform: scale(20, 20);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(50, 50);
+                opacity: 0;
+            }
+        }
+
+        /* Typing animation */
+        .bio {
+            overflow: hidden;
+            border-right: 2px solid rgba(255, 150, 200, 0.75);
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+           50% { border-color: rgba(255, 150, 200, 0.75) }
+        }
+
+        /* Border glow effect */
+        @keyframes border-glow {
+            0% {
+                box-shadow: 0 0 5px rgba(220, 80, 140, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(220, 80, 140, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 5px rgba(220, 80, 140, 0.5);
+            }
+        }
+
+        .name-container, .contact-box {
+            animation: border-glow 3s infinite;
+        }
+
+        /* Cursor trail */
+        .cursor-trail {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 150, 200, 0.3);
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50);
+            transition: width 0.2s, height 0.2s, opacity 0.2s;
         }
 
         @media (max-width: 900px) {
@@ -646,7 +752,6 @@
             .container {
                 width: 95%;
                 padding: 10px;
-                /* Tăng khoảng cách dưới cho mobile */
                 margin-bottom: 70px;
             }
 
@@ -721,17 +826,22 @@
 <body>
     <!-- Video nền -->
     <video class="video-background" id="bgVideo" autoplay loop muted>
-        <source src="video/videoplayback.webm" type="video/webm">
+        <source src="mp3/lv_0_20250910232237.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     
+    <!-- Floating particles -->
+    <div class="animated-bg-elements" id="animatedBg"></div>
+    
     <!-- Overlay kích hoạt với hiệu ứng màu custom -->
     <div class="activation-overlay" id="activationOverlay">
-        <div class="activation-message">Hope you enjoy my portfolio</div>
+        <div class="activation-message">Welcome to Kurumi World</div>
+        <div class="activation-hint">Click anywhere to enter</div>
     </div>
     
     <!-- Custom cursor - chấm sáng trắng -->
     <div class="custom-cursor" id="customCursor"></div>    
+    <div class="cursor-trail" id="cursorTrail"></div>
 
     <!-- Audio element for background music -->
     <audio id="bgMusicAudio" loop style="display: none;">
@@ -755,23 +865,25 @@
         <div class="profile-header">
             <div class="profile-left">
                 <div class="profile-pic-container">
-                    <img src="images/whitecat.png" alt="Profile Picture" class="profile-pic" id="profilePic">
+                    <img src="my pic/Avtprofile.jpg" alt="Kurumi Lover" class="profile-pic" id="profilePic">
                     <div class="status-badge" id="statusBadge">
-                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-clock"></i>
                     </div>
                 </div>
                 <div class="name-container" id="nameContainer">
                     <div class="username" id="fullName">
-                        <span>N</span>
-                        <span>g</span>
+                        <span>K</span>
                         <span>u</span>
-                        <span>y</span>
-                        <span>ễ</span>
-                        <span>n</span>
-                        <span> </span>
-                        <span>N</span>
-                        <span>e</span>
+                        <span>r</span>
+                        <span>u</span>
                         <span>m</span>
+                        <span>i</span>
+                        <span> </span>
+                        <span>L</span>
+                        <span>o</span>
+                        <span>v</span>
+                        <span>e</span>
+                        <span>r</span>
                     </div>
                 </div>
                 
@@ -788,40 +900,40 @@
                 </div>
                 
                 <div class="bio">
-                    Just a Content Creator<br>
-                    boy like cat, BoyWithUke<br>
-                    and Marino music<br>
-                    🐾🎧✨
+                    Kurumi Tokisaki Enthusiast 🕰️<br>
+                    Anime & Game Lover 🎮<br>
+                    Zaphkiel's Clock Keeper ⏳<br>
+                    🎌❤️🔪
                 </div>
             </div>
 
             <div class="profile-right">
                 <!-- Kết nối với tôi -->
                 <div class="card">
-                    <h2 class="card-title"><i class="fas fa-link"></i> Connect Me On</h2>
+                    <h2 class="card-title"><i class="fas fa-link"></i> Connect With Me</h2>
                     <div class="social-links">
-                        <a href="https://www.youtube.com/@nemnuong" target="_blank" class="social-link youtube">
+                        <a href="https://www.youtube.com/" target="_blank" class="social-link youtube">
                             <div class="social-icon">
                                 <i class="fab fa-youtube"></i>
                             </div>
                             <span class="social-label">YouTube</span>
                         </a>
                         
-                        <a href="https://www.tiktok.com/@nguyennem2006?is_from_webapp=1&sender_device=pc" target="_blank" class="social-link tiktok">
+                        <a href="https://www.tiktok.com/@kengkeng1404?_t=ZS-8zcD4J3sLo1&_r=1" target="_blank" class="social-link tiktok">
                             <div class="social-icon">
                                 <i class="fab fa-tiktok"></i>
                             </div>
                             <span class="social-label">TikTok</span>
                         </a>
                         
-                        <a href="https://open.spotify.com/user/31njaguxvody6xit6gajvngzhhe4?si=55bdc1bfb41c4cf0" target="_blank" class="social-link spotify">
+                        <a href="https://open.spotify.com/artist/4RUINt2FCjYwvCjcVyntFM?si=bsA66KgNRZCkAY3wiRKmOA" target="_blank" class="social-link spotify">
                             <div class="social-icon">
                                 <i class="fab fa-spotify"></i>
                             </div>
                             <span class="social-label">Spotify</span>
                         </a>
                         
-                        <a href="https://discord.gg/2zrethSUr9" target="_blank" class="social-link discord">
+                        <a href="https://discord.gg/" target="_blank" class="social-link discord">
                             <div class="social-icon">
                                 <i class="fab fa-discord"></i>
                             </div>
@@ -829,7 +941,7 @@
                         </a>
 
                         <!-- Thêm Facebook -->
-                        <a href="https://www.facebook.com/profile.php?id=61575822069584" target="_blank" class="social-link facebook">
+                        <a href="https://www.facebook.com/share/14MYVEoDjhT/" target="_blank" class="social-link facebook">
                             <div class="social-icon">
                                 <i class="fab fa-facebook"></i>
                             </div>
@@ -842,12 +954,12 @@
                 <div class="card">
                     <h2 class="card-title"><i class="fas fa-music"></i> My Favorite Playlists</h2>
                     <div class="playlists-container">
-                        <div class="playlist-card" id="playlist1" data-link="https://open.spotify.com/playlist/3AFi6LIkP88acuvQDMytQx">
-                            <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/3AFi6LIkP88acuvQDMytQx?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                        <div class="playlist-card" id="playlist1" data-link="https://open.spotify.com/artist/4RUINt2FCjYwvCjcVyntFM?si=bsA66KgNRZCkAY3wiRKmOA">
+                            <iframe class="spotify-player" src="https://open.spotify.com/embed/artist/4RUINt2FCjYwvCjcVyntFM?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                             <div class="spotify-hint">Click to open in Spotify</div>
                         </div>
-                        <div class="playlist-card" id="playlist2" data-link="https://open.spotify.com/playlist/3Mp1DOUa7Mfn4Hsq741ayo">
-                            <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/3Mp1DOUa7Mfn4Hsq741ayo?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                        <div class="playlist-card" id="playlist2" data-link="https://open.spotify.com/playlist/5T3ctwYTpI2JCaf3vKJ1In?si=1108d59fc6414f31">
+                            <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/5T3ctwYTpI2JCaf3vKJ1In?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                             <div class="spotify-hint">Click to open in Spotify</div>
                         </div>
                     </div>
@@ -858,17 +970,50 @@
     
     <!-- Footer với hiệu ứng xuất hiện từ từ -->
     <div class="main-footer" id="mainFooter">
-        <div class="copyright" id="copyright">© 2025 by Nem. Created with GitHub.</div>
+        <div class="copyright" id="copyright">© 2025 by Kurumi Lover. Created with ❤️.</div>
     </div>
     
     <script>
+        // Tạo các hạt nổi
+        function createFloatingParticles() {
+            const container = document.getElementById('animatedBg');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('floating-particle');
+                
+                // Kích thước ngẫu nhiên
+                const size = Math.random() * 20 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Vị trí ngẫu nhiên
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Độ trễ animation
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+
         // Custom cursor - chấm sáng trắng đơn giản
         function setupCustomCursor() {
             const cursor = document.getElementById('customCursor');
+            const trail = document.getElementById('cursorTrail');
             
             document.addEventListener('mousemove', (e) => {
                 cursor.style.left = `${e.clientX}px`;
                 cursor.style.top = `${e.clientY}px`;
+                
+                // Tạo hiệu ứng trail
+                setTimeout(() => {
+                    trail.style.left = `${e.clientX}px`;
+                    trail.style.top = `${e.clientY}px`;
+                }, 50);
             });
             
             document.addEventListener('mousedown', () => {
@@ -901,7 +1046,7 @@
             });
         }
 
-        // Hiệu ứng chữ "Nguyễn Nem"
+        // Hiệu ứng chữ "Kurumi Lover"
         function activateNameEffect() {
             const nameChars = document.querySelectorAll('#fullName span');
             
@@ -1038,15 +1183,15 @@
             });
         }
         
-        // Tạo hạt bong bóng (màu trắng)
+        // Tạo hạt bong bóng (màu hồng phù hợp với Kurumi)
         function createBubbleParticle(x, y) {
             const particle = document.createElement('div');
             particle.style.position = 'fixed';
             particle.style.width = '6px';
             particle.style.height = '6px';
             particle.style.borderRadius = '50%';
-            particle.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-            particle.style.boxShadow = '0 0 6px rgba(255, 255, 255, 0.8)';
+            particle.style.backgroundColor = 'rgba(255, 150, 200, 0.8)';
+            particle.style.boxShadow = '0 0 6px rgba(255, 150, 200, 0.8)';
             particle.style.left = `${x}px`;
             particle.style.top = `${y}px`;
             particle.style.pointerEvents = 'none';
@@ -1169,6 +1314,7 @@
         
         // Khởi tạo
         document.addEventListener('DOMContentLoaded', function() {
+            createFloatingParticles();
             setupCustomCursor();
             activateNameEffect();
             setupCopyrightEffect();
@@ -1187,10 +1333,10 @@
             // Hiệu ứng khi hover vào view counter
             const viewCounter = document.getElementById('globalViewCounter');
             viewCounter.addEventListener('mouseover', function() {
-                this.style.background = 'rgba(138, 92, 246, 0.5)';
+                this.style.background = 'rgba(220, 80, 140, 0.5)';
             });
             viewCounter.addEventListener('mouseout', function() {
-                this.style.background = 'rgba(30, 30, 46, 0.7)';
+                this.style.background = 'rgba(89, 30, 70, 0.7)';
             });
             
             // Hiển thị footer khi kéo xuống cuối trang
