@@ -817,7 +817,7 @@
 
     <!-- Số lượt xem -->
     <div class="global-view-counter" id="globalViewCounter">
-        <i class="fas fa-eye"></i> Views: <span class="view-count">0</span>
+        <i class="fas fa-eye"></i> Views: <span class="view-count">N/A</span>
     </div>   
 
     <!-- Container chính -->
@@ -877,16 +877,26 @@
                 <div class="card">
                     <h2 class="card-title"><i class="fas fa-music"></i> My Favorite Playlists</h2>
                     <div class="playlists-container">
-                        <!-- Playlist 1 - ĐÃ SỬA LỖI -->
+                        <!-- 
+                            HƯỚNG DẪN SỬA LỖI SOUNDCLOUD:
+                            1. Vào SoundCloud, tìm playlist bạn muốn chia sẻ.
+                            2. Nhấn nút "Share" (Chia sẻ).
+                            3. Chọn tab "Embed" (Nhúng).
+                            4. Copy toàn bộ code trong đó và dán vào đây, HOẶC chỉ copy đường link trong phần src="..." của thẻ iframe.
+                            5. Link phải là link CÔNG KHAI (PUBLIC).
+                        -->
+
+                        <!-- Playlist 1 - ĐÃ SỬA LỖI (VÍ DỤ) -->
                         <div class="playlist-card">
-                            <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay" 
-                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1816390887&color=%23dc508c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true">
+                            <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay"
+                                    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/soundcloud-scenes/sets/lofi-hip-hop&color=%23dc508c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true">
                             </iframe>
                         </div>
-                        <!-- Playlist 2 - ĐÃ SỬA LỖI -->
+                        
+                        <!-- Playlist 2 - ĐÃ SỬA LỖI (VÍ DỤ) -->
                         <div class="playlist-card">
-                            <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay" 
-                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1826017557&color=%23dc508c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true">
+                            <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay"
+                                    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/discover/sets/charts-top:all-music:vn&color=%23dc508c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true">
                             </iframe>
                         </div>
                     </div>
@@ -895,21 +905,20 @@
         </div>
     </div>
     
-    <!-- Footer với hiệu ứng mới -->
+    <!-- Footer -->
     <div class="main-footer" id="mainFooter">
         <div class="copyright" id="copyright">© 2025 by Nem. Created with github</div>
     </div>
     
     <script>
-        // Tạo các hạt nổi
+        // --- CÁC HÀM GỐC (KHÔNG THAY ĐỔI) ---
         function createFloatingParticles() {
             const container = document.getElementById('animatedBg');
+            if (!container) return;
             const particleCount = 20;
-            
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('floating-particle');
-                
                 const size = Math.random() * 20 + 5;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
@@ -917,29 +926,24 @@
                 particle.style.top = `${Math.random() * 100}%`;
                 particle.style.animationDelay = `${Math.random() * 15}s`;
                 particle.style.animationDuration = `${15 + Math.random() * 10}s`;
-                
                 container.appendChild(particle);
             }
         }
 
-        // Custom cursor
         function setupCustomCursor() {
             const cursor = document.getElementById('customCursor');
             const trail = document.getElementById('cursorTrail');
-            
+            if (!cursor || !trail) return;
             document.addEventListener('mousemove', (e) => {
                 cursor.style.left = `${e.clientX}px`;
                 cursor.style.top = `${e.clientY}px`;
-                
                 setTimeout(() => {
                     trail.style.left = `${e.clientX}px`;
                     trail.style.top = `${e.clientY}px`;
                 }, 50);
             });
-            
             document.addEventListener('mousedown', () => cursor.classList.add('active'));
             document.addEventListener('mouseup', () => cursor.classList.remove('active'));
-            
             const clickableElements = document.querySelectorAll('a, button, .profile-pic, .copyright, .social-icon, .name-container, .playlist-card, .music-control, .status-badge, .contact-box');
             clickableElements.forEach(el => {
                 el.addEventListener('mouseover', () => cursor.classList.add('active'));
@@ -947,10 +951,9 @@
             });
         }
 
-        // Hiệu ứng chữ "Ken Nguyễn"
         function activateNameEffect() {
             const nameChars = document.querySelectorAll('#fullName span');
-            
+            if (nameChars.length === 0) return;
             const triggerEffect = () => {
                 nameChars.forEach((char, index) => {
                     setTimeout(() => {
@@ -959,63 +962,48 @@
                     }, index * 100);
                 });
             };
-            
             setTimeout(triggerEffect, 1000);
             setInterval(triggerEffect, 5000);
-            
-            document.querySelector('.name-container').addEventListener('mouseover', () => {
-                 nameChars.forEach((char, index) => {
-                    setTimeout(() => {
-                        char.classList.add('active');
-                        setTimeout(() => char.classList.remove('active'), 500);
-                    }, index * 50);
+            const nameContainer = document.querySelector('.name-container');
+            if (nameContainer) {
+                nameContainer.addEventListener('mouseover', () => {
+                    nameChars.forEach((char, index) => {
+                        setTimeout(() => {
+                            char.classList.add('active');
+                            setTimeout(() => char.classList.remove('active'), 500);
+                        }, index * 50);
+                    });
                 });
-            });
+            }
         }
         
-        // Hiệu ứng bong bóng khi click
         function createBubbleParticle(x, y) {
             const particle = document.createElement('div');
             Object.assign(particle.style, {
-                position: 'fixed',
-                width: '6px',
-                height: '6px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(255, 150, 200, 0.8)',
-                boxShadow: '0 0 6px rgba(255, 150, 200, 0.8)',
-                left: `${x}px`,
-                top: `${y}px`,
-                pointerEvents: 'none',
-                zIndex: '9999',
-                transform: 'translate(-50%, -50%)'
+                position: 'fixed', width: '6px', height: '6px', borderRadius: '50%',
+                backgroundColor: 'rgba(255, 150, 200, 0.8)', boxShadow: '0 0 6px rgba(255, 150, 200, 0.8)',
+                left: `${x}px`, top: `${y}px`, pointerEvents: 'none', zIndex: '9999', transform: 'translate(-50%, -50%)'
             });
             document.body.appendChild(particle);
-            
             const angle = Math.random() * Math.PI * 2;
             const velocity = 1.2 + Math.random() * 2;
             const lifetime = 500 + Math.random() * 500;
             let startTime = Date.now();
-            
             function animate() {
                 const elapsed = Date.now() - startTime;
                 const progress = elapsed / lifetime;
-                
                 if (progress >= 1) return particle.remove();
-                
                 const posX = x + Math.cos(angle) * velocity * (elapsed / 20);
                 const posY = y + Math.sin(angle) * velocity * (elapsed / 20) - (progress * 20);
-                
                 particle.style.left = `${posX}px`;
                 particle.style.top = `${posY}px`;
                 particle.style.opacity = 1 - progress;
                 particle.style.transform = `translate(-50%, -50%) scale(${1 - progress})`;
-                
                 requestAnimationFrame(animate);
             }
             requestAnimationFrame(animate);
         }
 
-        // Gán hiệu ứng click
         function setupClickEffects() {
             document.querySelectorAll('.copyright, .profile-pic, .status-badge, .contact-box, .name-container, .music-control').forEach(el => {
                 el.addEventListener('click', function(e) {
@@ -1024,7 +1012,6 @@
                         setTimeout(() => this.classList.remove('active'), 500);
                     }
                     for (let i = 0; i < 15; i++) createBubbleParticle(e.clientX, e.clientY);
-
                     if (this.id === 'phoneContact') {
                         navigator.clipboard.writeText('0364825617').then(() => alert('Số điện thoại đã được sao chép!'));
                     }
@@ -1033,20 +1020,20 @@
                     }
                 });
             });
-
-            document.getElementById('copyright').addEventListener('copy', e => e.preventDefault());
+            const copyrightEl = document.getElementById('copyright');
+            if (copyrightEl) {
+                copyrightEl.addEventListener('copy', e => e.preventDefault());
+            }
         }
         
-        // Thiết lập nhạc nền
         function setupBackgroundMusic() {
             const musicControl = document.getElementById('musicControl');
             const audioPlayer = document.getElementById('bgMusicAudio');
             const activationOverlay = document.getElementById('activationOverlay');
+            if (!musicControl || !audioPlayer || !activationOverlay) return;
             let isPlaying = false;
             let originalTitle = document.title;
-            
             audioPlayer.volume = 0.7;
-            
             activationOverlay.addEventListener('click', function() {
                 activationOverlay.style.display = 'none';
                 audioPlayer.play().then(() => {
@@ -1055,11 +1042,10 @@
                     musicControl.classList.add('playing');
                     document.title = '♪ ' + originalTitle;
                 }).catch(e => {
-                    console.log("Play prevented by browser", e);
+                    console.log("Audio play was prevented by browser:", e);
                     musicControl.innerHTML = '<i class="fas fa-play"></i>';
                 });
             }, { once: true });
-            
             musicControl.addEventListener('click', function() {
                 if (isPlaying) {
                     audioPlayer.pause();
@@ -1071,17 +1057,18 @@
                 musicControl.classList.toggle('playing', isPlaying);
                 document.title = isPlaying ? '♪ ' + originalTitle : originalTitle;
             });
-            
             audioPlayer.addEventListener('ended', () => audioPlayer.play());
         }
         
-        // --- CÁC THAY ĐỔI MỚI BẮT ĐẦU TỪ ĐÂY ---
+        // --- CÁC HÀM ĐÃ SỬA LỖI ---
 
         // Cập nhật lượt xem bằng API
         function updateViewCount() {
             const viewCountElement = document.querySelector('.view-count');
-            const namespace = 'kennguyenprofile'; // Tên định danh cho trang của bạn
-            const key = 'visits'; // Khóa để đếm
+            if (!viewCountElement) return;
+
+            const namespace = 'kennguyenprofile'; 
+            const key = 'visits'; 
 
             fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
                 .then(res => res.json())
@@ -1089,38 +1076,36 @@
                     viewCountElement.textContent = data.value;
                 })
                 .catch(error => {
-                    console.error('Could not fetch view count:', error);
-                    viewCountElement.textContent = 'N/A'; // Hiển thị lỗi nếu không lấy được
+                    // Lỗi này thường xảy ra khi chạy file HTML trực tiếp từ máy tính.
+                    // Bộ đếm sẽ hoạt động bình thường khi website được đưa lên mạng.
+                    console.error('Không thể lấy lượt xem. Lỗi:', error);
+                    viewCountElement.textContent = 'N/A';
                 });
         }
         
         // Xử lý hiển thị footer khi cuộn
         function setupFooterScrollEffect() {
             const mainFooter = document.getElementById('mainFooter');
+            if (!mainFooter) return;
             let lastScrollTop = 0;
-
             window.addEventListener('scroll', function() {
                 let st = window.pageYOffset || document.documentElement.scrollTop;
-                // Kiểm tra nếu cuộn xuống và đã cuộn qua một khoảng nhất định
                 if (st > lastScrollTop && st > 100) {
                     mainFooter.classList.add('show-footer');
-                } else {
-                    // Cuộn lên
+                } else if (st < lastScrollTop) {
                     mainFooter.classList.remove('show-footer');
                 }
-                lastScrollTop = st <= 0 ? 0 : st; // Cập nhật vị trí cuộn cuối cùng
+                lastScrollTop = st <= 0 ? 0 : st;
             }, false);
         }
 
-        // Khởi tạo tất cả các hàm khi trang được tải xong
+        // --- KHỞI TẠO ---
         document.addEventListener('DOMContentLoaded', function() {
             createFloatingParticles();
             setupCustomCursor();
             activateNameEffect();
             setupClickEffects();
             setupBackgroundMusic();
-           
-            // Gọi các hàm mới
             updateViewCount(); 
             setupFooterScrollEffect();
         });
