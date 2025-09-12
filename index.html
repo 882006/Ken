@@ -292,7 +292,6 @@
             color: #ff9ecb;
         }
         
-        /* Chỉnh sửa bio */
         .bio {
             font-size: 0.85rem;
             color: #e0c0d0;
@@ -301,7 +300,7 @@
             text-align: center;
             font-style: italic;
             padding: 0 8px;
-            font-weight: bold; /* Chữ in đậm */
+            font-weight: bold;
         }
 
         .profile-right {
@@ -441,12 +440,12 @@
             width: 100%;
             height: 100%;
             border: none;
-            border-radius: 12px; /* Bo tròn góc */
-            transition: box-shadow 0.3s ease; /* Hiệu ứng transition */
+            border-radius: 12px;
+            transition: box-shadow 0.3s ease;
         }
 
         .playlist-card:hover .soundcloud-player {
-            box-shadow: 0 0 15px rgba(220, 80, 140, 0.7); /* Hiệu ứng glow khi hover */
+            box-shadow: 0 0 15px rgba(220, 80, 140, 0.7);
         }
 
         .main-footer {
@@ -487,7 +486,6 @@
             box-shadow: 0 0 15px rgba(220, 80, 140, 0.6);
         }
 
-        /* Music control */
         .music-control {
             position: fixed;
             bottom: 20px;
@@ -523,7 +521,6 @@
             100% { box-shadow: 0 0 0 0 rgba(220, 80, 140, 0); }
         }
 
-        /* Overlay kích hoạt */
         .activation-overlay {
             position: fixed;
             top: 0;
@@ -577,7 +574,6 @@
             box-shadow: 0 0 20px rgba(220, 80, 140, 0.3);
         }
 
-        /* Floating particles */
         .floating-particle {
             position: absolute;
             border-radius: 50%;
@@ -599,7 +595,6 @@
             }
         }
 
-        /* Ripple effect */
         .social-icon::after {
             content: '';
             position: absolute;
@@ -633,7 +628,6 @@
             }
         }
 
-        /* Border glow effect */
         @keyframes border-glow {
             0% {
                 box-shadow: 0 0 5px rgba(220, 80, 140, 0.5);
@@ -650,7 +644,6 @@
             animation: border-glow 3s infinite;
         }
 
-        /* Cursor trail */
         .cursor-trail {
             position: fixed;
             width: 8px;
@@ -801,13 +794,13 @@
     <!-- Floating particles -->
     <div class="animated-bg-elements" id="animatedBg"></div>
     
-    <!-- Overlay kích hoạt với hiệu ứng màu custom -->
+    <!-- Overlay kích hoạt -->
     <div class="activation-overlay" id="activationOverlay">
         <div class="activation-message">Hi there, welcome</div>
         <div class="activation-hint">Click anywhere to enter</div>
     </div>
     
-    <!-- Custom cursor - chấm sáng trắng -->
+    <!-- Custom cursor -->
     <div class="custom-cursor" id="customCursor"></div>    
     <div class="cursor-trail" id="cursorTrail"></div>
 
@@ -817,19 +810,18 @@
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Nút điều khiển nhạc - hình tròn -->
+    <!-- Nút điều khiển nhạc -->
     <div class="music-control" id="musicControl">
         <i class="fas fa-play"></i>
     </div>
 
-    <!-- Số lượt xem ở góc trái trên -->
+    <!-- Số lượt xem -->
     <div class="global-view-counter" id="globalViewCounter">
-        <i class="fas fa-eye"></i> Views: <span class="view-count">128</span>
+        <i class="fas fa-eye"></i> Views: <span class="view-count">0</span>
     </div>   
 
     <!-- Container chính -->
     <div class="container">
-        <!-- Profile header -->
         <div class="profile-header">
             <div class="profile-left">
                 <div class="profile-pic-container">
@@ -840,20 +832,10 @@
                 </div>
                 <div class="name-container" id="nameContainer">
                     <div class="username" id="fullName">
-                        <span>K</span>
-                        <span>e</span>
-                        <span>n</span>
-                        <span> </span>
-                        <span>N</span>
-                        <span>g</span>
-                        <span>u</span>
-                        <span>y</span>
-                        <span>ễ</span>
-                        <span>n</span>
+                        <span>K</span><span>e</span><span>n</span><span> </span><span>N</span><span>g</span><span>u</span><span>y</span><span>ễ</span><span>n</span>
                     </div>
                 </div>
                 
-                <!-- Phần liên hệ với viền nhỏ hơn -->
                 <div class="contact-info">
                     <div class="contact-box" id="phoneContact">
                         <div class="lh-title">Phone:</div>
@@ -874,45 +856,38 @@
             </div>
 
             <div class="profile-right">
-                <!-- Kết nối với tôi -->
                 <div class="card">
                     <h2 class="card-title"><i class="fas fa-link"></i> Connect With Me</h2>
                     <div class="social-links">
                         <a href="https://www.tiktok.com/@kengkeng1404?_t=ZS-8zcD4J3sLo1&_r=1" target="_blank" class="social-link tiktok">
-                            <div class="social-icon">
-                                <i class="fab fa-tiktok"></i>
-                            </div>
+                            <div class="social-icon"><i class="fab fa-tiktok"></i></div>
                             <span class="social-label">TikTok</span>
                         </a>
-                        
                         <a href="https://discord.gg/" target="_blank" class="social-link discord">
-                            <div class="social-icon">
-                                <i class="fab fa-discord"></i>
-                            </div>
+                            <div class="social-icon"><i class="fab fa-discord"></i></div>
                             <span class="social-label">Discord</span>
                         </a>
-
-                        <!-- Thêm Facebook -->
                         <a href="https://www.facebook.com/share/14MYVEoDjhT/" target="_blank" class="social-link facebook">
-                            <div class="social-icon">
-                                <i class="fab fa-facebook"></i>
-                            </div>
+                            <div class="social-icon"><i class="fab fa-facebook"></i></div>
                             <span class="social-label">Facebook</span>
                         </a>
                     </div>
                 </div>
                 
-                <!-- SoundCloud Playlists -->
                 <div class="card">
                     <h2 class="card-title"><i class="fas fa-music"></i> My Favorite Playlists</h2>
                     <div class="playlists-container">
-                        <!-- Playlist 1 -->
+                        <!-- Playlist 1 - ĐÃ SỬA LỖI -->
                         <div class="playlist-card">
-                            <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//on.soundcloud.com/g9UFQNOH1fH5FeDp7&color=%23dc508c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay" 
+                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1816390887&color=%23dc508c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true">
+                            </iframe>
                         </div>
-                        <!-- Playlist 2 -->
+                        <!-- Playlist 2 - ĐÃ SỬA LỖI -->
                         <div class="playlist-card">
-                            <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//on.soundcloud.com/wJ6S31YGDf14MCFOc9&color=%23dc508c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <iframe class="soundcloud-player" scrolling="no" frameborder="no" allow="autoplay" 
+                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1826017557&color=%23dc508c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true">
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -920,7 +895,7 @@
         </div>
     </div>
     
-    <!-- Footer với hiệu ứng xuất hiện từ từ -->
+    <!-- Footer với hiệu ứng mới -->
     <div class="main-footer" id="mainFooter">
         <div class="copyright" id="copyright">© 2025 by Nem. Created with github</div>
     </div>
@@ -938,10 +913,8 @@
                 const size = Math.random() * 20 + 5;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
-                
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.top = `${Math.random() * 100}%`;
-                
                 particle.style.animationDelay = `${Math.random() * 15}s`;
                 particle.style.animationDuration = `${15 + Math.random() * 10}s`;
                 
@@ -1085,7 +1058,7 @@
                     console.log("Play prevented by browser", e);
                     musicControl.innerHTML = '<i class="fas fa-play"></i>';
                 });
-            }, { once: true }); // Chỉ chạy 1 lần
+            }, { once: true });
             
             musicControl.addEventListener('click', function() {
                 if (isPlaying) {
@@ -1099,10 +1072,47 @@
                 document.title = isPlaying ? '♪ ' + originalTitle : originalTitle;
             });
             
-            audioPlayer.addEventListener('ended', () => this.play());
+            audioPlayer.addEventListener('ended', () => audioPlayer.play());
         }
         
-        // Khởi tạo
+        // --- CÁC THAY ĐỔI MỚI BẮT ĐẦU TỪ ĐÂY ---
+
+        // Cập nhật lượt xem bằng API
+        function updateViewCount() {
+            const viewCountElement = document.querySelector('.view-count');
+            const namespace = 'kennguyenprofile'; // Tên định danh cho trang của bạn
+            const key = 'visits'; // Khóa để đếm
+
+            fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+                .then(res => res.json())
+                .then(data => {
+                    viewCountElement.textContent = data.value;
+                })
+                .catch(error => {
+                    console.error('Could not fetch view count:', error);
+                    viewCountElement.textContent = 'N/A'; // Hiển thị lỗi nếu không lấy được
+                });
+        }
+        
+        // Xử lý hiển thị footer khi cuộn
+        function setupFooterScrollEffect() {
+            const mainFooter = document.getElementById('mainFooter');
+            let lastScrollTop = 0;
+
+            window.addEventListener('scroll', function() {
+                let st = window.pageYOffset || document.documentElement.scrollTop;
+                // Kiểm tra nếu cuộn xuống và đã cuộn qua một khoảng nhất định
+                if (st > lastScrollTop && st > 100) {
+                    mainFooter.classList.add('show-footer');
+                } else {
+                    // Cuộn lên
+                    mainFooter.classList.remove('show-footer');
+                }
+                lastScrollTop = st <= 0 ? 0 : st; // Cập nhật vị trí cuộn cuối cùng
+            }, false);
+        }
+
+        // Khởi tạo tất cả các hàm khi trang được tải xong
         document.addEventListener('DOMContentLoaded', function() {
             createFloatingParticles();
             setupCustomCursor();
@@ -1110,20 +1120,9 @@
             setupClickEffects();
             setupBackgroundMusic();
            
-            // Cập nhật lượt xem
-            let viewCount = parseInt(localStorage.getItem('viewCount') || 128) + 1;
-            localStorage.setItem('viewCount', viewCount);
-            document.querySelector('.view-count').textContent = viewCount;
-            
-            // Hiển thị footer khi cuộn chuột
-            const handleFooterScroll = () => {
-                const mainFooter = document.getElementById('mainFooter');
-                if (window.scrollY > 50) {
-                    mainFooter.classList.add('show-footer');
-                    window.removeEventListener('scroll', handleFooterScroll);
-                }
-            };
-            window.addEventListener('scroll', handleFooterScroll);
+            // Gọi các hàm mới
+            updateViewCount(); 
+            setupFooterScrollEffect();
         });
     </script>
 </body>
